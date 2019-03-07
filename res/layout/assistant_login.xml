@@ -86,13 +86,7 @@
 				android:layout_height="40dp"
 				android:maxLines="1"/>
 
-			<TextView
-				android:text="@string/domain"
-				style="@style/font13"
-				android:textAllCaps="true"
-				android:paddingTop="20dp"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"/>
+
 
 			<EditText
 				android:id="@+id/assistant_domain"

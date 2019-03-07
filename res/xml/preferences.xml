@@ -402,21 +402,6 @@
 
 			</PreferenceCategory>
 
-			 <PreferenceCategory
-				android:title="@string/pref_primary_account_title">
-
-				<EditTextPreference
-					android:title="@string/pref_display_name_title"
-					android:key="@string/pref_display_name_key"
-					android:inputType="textPersonName"
-					android:persistent="false"/>
-
-				<EditTextPreference
-					android:title="@string/pref_user_name_title"
-					android:key="@string/pref_user_name_key"
-					android:persistent="false"/>
-
-			 </PreferenceCategory>
 
 			<PreferenceScreen
 			    android:title="@string/pref_audio_hacks_title"

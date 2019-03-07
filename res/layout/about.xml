@@ -38,21 +38,53 @@
             android:layout_weight="0.2"
             android:padding="15dp"/>
     </LinearLayout>
-
     <LinearLayout
         android:background="@color/colorC"
         android:orientation="vertical"
         android:padding="10dp"
         android:gravity="center"
+        android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:text="@string/app_name"
+            style="@style/font22"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"/>
+
+
+
+        <TextView
+
+            android:text="THIS IS A DEMO APP BY MESHPEEP"
+            style="@style/font12"
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:padding="10dp"
+
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center">
 
         <ImageView
-            android:src="@drawable/splashscreen"
+            android:src="@drawable/mesh"
+            android:tint="@color/colorL"
             android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"/>
 
         <TextView
@@ -65,17 +97,21 @@
             android:layout_gravity="center"/>
 
         <TextView
-            android:text="@string/app_description"
-            style="@style/font2"
+            android:layout_marginTop="20dp"
+            android:text="MeshPeep is a GreenBuckett brand business softphone that brings audio and visualcommunication together in your mobile device. It lets you use your smartphone as a company phone wherever you are, while maximizing mobility and minimizing costs.
+"
+            style="@style/font9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:gravity="center"
             android:layout_gravity="center"/>
 
         <TextView
+            android:layout_marginTop="15dp"
             android:id="@+id/about_android_version"
-            android:text="@string/about_version"
-            style="@style/font12"
-            android:paddingTop="20dp"
+            android:text="Contact"
+            style="@style/font9"
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_width="wrap_content"
@@ -83,7 +119,8 @@
 
         <TextView
             android:id="@+id/about_liblinphone_version"
-            android:text="@string/about_liblinphone_version"
+            android:text="sales@meshpeep.com.ng"
+            android:textColor="@color/colorL"
             style="@style/font12"
             android:layout_gravity="center"
             android:gravity="center"
@@ -94,69 +131,37 @@
 
     <LinearLayout
         android:background="@color/colorH"
-        android:orientation="vertical"
-        android:padding="10dp"
+        android:orientation="horizontal"
+android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.2"
         android:layout_gravity="center">
 
         <TextView
-            android:id="@+id/about_link"
-            android:text="@string/about_link"
-            android:autoLink="web"
-            style="@style/font2"
-            android:textColorLink="@color/colorA"
-            android:paddingTop="20dp"
+            android:layout_weight="1"
+            android:text="Powered by Route7 Networks"
+            style="@style/font9"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:gravity="left"
+            android:textSize="12sp"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
 
         <TextView
-            android:id="@+id/about_text"
-            android:text="@string/about_text"
-            style="@style/font23"
+            android:layout_weight="1"
+            android:text="GNU General Public License V2"
+            style="@style/font9"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:paddingBottom="20dp"
+            android:gravity="right"
+            android:textSize="12sp"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <View
-            android:background="@color/colorE"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
 
-        <LinearLayout
-            style="android:attr/buttonBarStyle"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-            <Button
-                android:id="@+id/send_log"
-                style="android:attr/buttonBarButtonStyleStyle"
-                android:background="@drawable/button_background"
-                android:padding="10dp"
-                android:layout_margin="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/menu_send_log"/>
-
-            <Button
-                android:id="@+id/reset_log"
-                style="android:attr/buttonBarButtonStyleStyle"
-                android:background="@drawable/button_background"
-                android:padding="10dp"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/menu_reset_log"/>
-
-        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

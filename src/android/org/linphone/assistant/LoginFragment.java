@@ -38,6 +38,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
     private EditText login, userid, password, domain, displayName;
     private RadioGroup transports;
     private Button apply;
+    String test_domain = "www.testdomain.com";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,6 +55,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
         password.addTextChangedListener(this);
         domain = view.findViewById(R.id.assistant_domain);
         domain.addTextChangedListener(this);
+        domain.setVisibility(View.GONE);
         transports = view.findViewById(R.id.assistant_transports);
         apply = view.findViewById(R.id.assistant_apply);
         apply.setEnabled(false);
@@ -67,7 +69,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
         int id = v.getId();
 
         if (id == R.id.assistant_apply) {
-            if (login.getText() == null || login.length() == 0 || password.getText() == null || password.length() == 0 || domain.getText() == null || domain.length() == 0) {
+            if (login.getText() == null || login.length() == 0 || password.getText() == null || password.length() == 0) {
                 Toast.makeText(getActivity(), getString(R.string.first_launch_no_login_password), Toast.LENGTH_LONG).show();
                 return;
             }
@@ -83,11 +85,9 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
                 }
             }
 
-            if (domain.getText().toString().compareTo(getString(R.string.default_domain)) == 0) {
-                AssistantActivity.instance().displayLoginLinphone(login.getText().toString(), password.getText().toString());
-            } else {
-                AssistantActivity.instance().genericLogIn(login.getText().toString(), userid.getText().toString(), password.getText().toString(), displayName.getText().toString(), null, domain.getText().toString(), transport);
-            }
+
+                AssistantActivity.instance().genericLogIn(login.getText().toString(), userid.getText().toString(), password.getText().toString(), displayName.getText().toString(), null, test_domain, transport);
+
         }
     }
 
@@ -97,7 +97,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        apply.setEnabled(!login.getText().toString().isEmpty() && !password.getText().toString().isEmpty() && !domain.getText().toString().isEmpty());
+        apply.setEnabled(!login.getText().toString().isEmpty() && !password.getText().toString().isEmpty());
     }
 
     @Override

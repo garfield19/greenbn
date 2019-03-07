@@ -38,6 +38,7 @@ public class WelcomeFragment extends Fragment implements OnClickListener {
 
         createAccount = view.findViewById(R.id.create_account);
         createAccount.setOnClickListener(this);
+        createAccount.setVisibility(View.GONE);
 
         logLinphoneAccount = view.findViewById(R.id.login_linphone);
         if (getResources().getBoolean(R.bool.hide_linphone_accounts_in_assistant)) {
@@ -45,6 +46,7 @@ public class WelcomeFragment extends Fragment implements OnClickListener {
         } else {
             logLinphoneAccount.setOnClickListener(this);
         }
+        logLinphoneAccount.setVisibility(View.GONE);
 
         logGenericAccount = view.findViewById(R.id.login_generic);
         if (getResources().getBoolean(R.bool.hide_generic_accounts_in_assistant)) {
@@ -53,12 +55,14 @@ public class WelcomeFragment extends Fragment implements OnClickListener {
             logGenericAccount.setOnClickListener(this);
         }
 
+
         remoteProvisioning = view.findViewById(R.id.remote_provisioning);
         if (getResources().getBoolean(R.bool.hide_remote_provisioning_in_assistant)) {
             remoteProvisioning.setVisibility(View.GONE);
         } else {
             remoteProvisioning.setOnClickListener(this);
         }
+        remoteProvisioning.setVisibility(View.GONE);
 
         return view;
     }

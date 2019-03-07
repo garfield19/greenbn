@@ -58,21 +58,21 @@ public class AboutFragment extends Fragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.about, container, false);
 
-        TextView aboutVersion = view.findViewById(R.id.about_android_version);
-        TextView aboutLiblinphoneVersion = view.findViewById(R.id.about_liblinphone_version);
-        aboutLiblinphoneVersion.setText(String.format(getString(R.string.about_liblinphone_version), LinphoneManager.getLc().getVersion()));
-        aboutVersion.setText(String.format(getString(R.string.about_version), BuildConfig.VERSION_NAME));
+      //  TextView aboutVersion = view.findViewById(R.id.about_android_version);
+      //  TextView aboutLiblinphoneVersion = view.findViewById(R.id.about_liblinphone_version);
+       // aboutLiblinphoneVersion.setText(String.format(getString(R.string.about_liblinphone_version), LinphoneManager.getLc().getVersion()));
+       // aboutVersion.setText(String.format(getString(R.string.about_version), BuildConfig.VERSION_NAME));
 
         cancel = view.findViewById(R.id.cancel);
         cancel.setOnClickListener(this);
 
-        sendLogButton = view.findViewById(R.id.send_log);
-        sendLogButton.setOnClickListener(this);
-        sendLogButton.setVisibility(LinphonePreferences.instance().isDebugEnabled() ? View.VISIBLE : View.GONE);
+        //sendLogButton = view.findViewById(R.id.send_log);
+       // sendLogButton.setOnClickListener(this);
+        //sendLogButton.setVisibility(LinphonePreferences.instance().isDebugEnabled() ? View.VISIBLE : View.GONE);
 
-        resetLogButton = view.findViewById(R.id.reset_log);
-        resetLogButton.setOnClickListener(this);
-        resetLogButton.setVisibility(LinphonePreferences.instance().isDebugEnabled() ? View.VISIBLE : View.GONE);
+       // resetLogButton = view.findViewById(R.id.reset_log);
+       // resetLogButton.setOnClickListener(this);
+       // resetLogButton.setVisibility(LinphonePreferences.instance().isDebugEnabled() ? View.VISIBLE : View.GONE);
 
         mListener = new CoreListenerStub() {
             @Override

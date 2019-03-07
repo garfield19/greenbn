@@ -1093,7 +1093,7 @@ public class SettingsFragment extends PreferencesListFragment {
     }
 
     private void initChatSettings() {
-        setPreferenceDefaultValueAndSummary(R.string.pref_image_sharing_server_key, mPrefs.getSharingPictureServerUrl());
+        setPreferenceDefaultValueAndSummary(R.string.pref_image_sharing_server_key, "");
         initLimeEncryptionPreference((ListPreference) findPreference(getString(R.string.pref_use_lime_encryption_key)));
         if (Version.sdkStrictlyBelow(Version.API26_O_80)) {
             findPreference(getString(R.string.pref_android_app_notif_settings_key)).setLayoutResource(R.layout.hidden);
@@ -1402,27 +1402,7 @@ public class SettingsFragment extends PreferencesListFragment {
             }
         });
 
-        findPreference(getString(R.string.pref_display_name_key)).setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                String value = (String) newValue;
-                mPrefs.setDefaultDisplayName(value);
-                preference.setSummary(value);
-                return true;
-            }
-        });
 
-        findPreference(getString(R.string.pref_user_name_key)).setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                String value = (String) newValue;
-                if (value.equals("")) return false;
-
-                mPrefs.setDefaultUsername(value);
-                preference.setSummary(value);
-                return true;
-            }
-        });
     }
 
     @Override
